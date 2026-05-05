@@ -4,11 +4,7 @@ export function initParticles() {
   const canvas = document.getElementById('heroCanvas') as HTMLCanvasElement;
   if (!canvas) return;
 
-  // Disable on mobile
-  if (window.innerWidth < 768) {
-    canvas.style.display = 'none';
-    return;
-  }
+  const isMobile = window.innerWidth < 768;
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -18,8 +14,8 @@ export function initParticles() {
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
 
-  // Particle system
-  const count = 2500;
+  // Particle system: optimized count for mobile
+  const count = isMobile ? 800 : 2500;
   const positions = new Float32Array(count * 3);
   const colors = new Float32Array(count * 3);
   const originalPositions = new Float32Array(count * 3);
