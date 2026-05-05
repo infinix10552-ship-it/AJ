@@ -1,0 +1,25 @@
+/* Hero */
+.hero { position:relative; height:100dvh; min-height:600px; display:flex; align-items:center; overflow:hidden; }
+
+.hero__container { position:relative; z-index:1; width:100%; align-items:end; }
+.hero__content { grid-column:1/9; }
+.hero__label { font-size:var(--text-label); letter-spacing:var(--tracking-label); color:var(--color-text-secondary); margin-bottom:24px; text-transform:uppercase; }
+.hero__heading { font-family:var(--font-display); font-size:var(--text-hero); font-weight:var(--weight-display); letter-spacing:var(--tracking-display); line-height:1.05; margin-bottom:32px; }
+.hero__line { display:block; }
+.hero__sub { color:var(--color-text-secondary); font-size:var(--text-mono); line-height:1.8; margin-bottom:40px; opacity:0; transform:translateY(12px); }
+.hero__sub-line { display:block; }
+.hero__cta { display:flex; gap:16px; flex-wrap:wrap; opacity:0; transform:translateY(12px); }
+.btn { display:inline-flex; align-items:center; gap:8px; padding:14px 28px; font-family:var(--font-mono); font-size:var(--text-label); text-transform:uppercase; letter-spacing:0.08em; border:1px solid var(--color-border-hover); background:transparent; color:var(--color-text-primary); border-radius:6px; transition:border-color 0.3s, box-shadow 0.3s, color 0.3s, background 0.3s; cursor:pointer; }
+.btn--primary:hover { border-color:var(--color-accent-cyan); box-shadow:var(--glow-cyan); }
+.btn--secondary { color:var(--color-accent-cyan); }
+.btn--secondary:hover { border-color:var(--color-accent-cyan); box-shadow:var(--glow-cyan); }
+.hero__scroll-indicator { grid-column:12/13; display:flex; flex-direction:column; align-items:center; gap:8px; justify-self:center; align-self:end; padding-bottom:40px; }
+.hero__scroll-indicator span { font-size:9px; letter-spacing:0.15em; color:var(--color-text-muted); text-transform:uppercase; }
+.hero__scroll-line { width:1px; height:40px; background:var(--color-text-muted); animation:scrollPulse 2s ease-in-out infinite; }
+@keyframes scrollPulse { 0%,100%{transform:scaleY(1);opacity:0.4} 50%{transform:scaleY(1.5);opacity:1} }
+
+@media(max-width:767px) {
+  .hero__content { grid-column:1/-1; }
+  .hero__scroll-indicator { display:none; }
+  .hero__heading { font-size:clamp(36px,10vw,52px); }
+}

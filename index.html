@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aman Jha — Software Engineer & Founder | Mumbai</title>
+    <meta name="description" content="Software engineer and founder of Avenra. Building full-stack systems and AI-powered tools from Mumbai. Open to opportunities at 12 LPA+.">
+    <meta property="og:title" content="Aman Jha — Building Systems. Scaling Logic.">
+    <meta property="og:description" content="Software engineer and founder of Avenra. Building full-stack systems and AI-powered tools from Mumbai.">
+    <meta property="og:image" content="/og-image.png">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#050505">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+      <div class="preloader__content">
+        <p class="preloader__text font-mono"></p>
+        <div class="preloader__bar-track">
+          <div class="preloader__bar-fill"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="mainNav">
+      <div class="nav__inner">
+        <div class="nav__brand">
+          <a href="#" class="nav__monogram">AJ</a>
+          <span class="nav__name font-mono">Aman Jha</span>
+        </div>
+        <div class="nav__links" id="navLinks">
+          <a href="#work" class="nav__link font-mono" data-magnetic>Work</a>
+          <a href="#about" class="nav__link font-mono" data-magnetic>About</a>
+          <a href="#credentials" class="nav__link font-mono" data-magnetic>Signal</a>
+          <a href="#contact" class="nav__link font-mono" data-magnetic>Contact</a>
+        </div>
+        <button class="nav__hamburger" id="navHamburger" aria-label="Toggle menu">
+          <span class="nav__hamburger-line"></span>
+          <span class="nav__hamburger-line"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#work" class="mobile-menu__link">Work</a>
+      <a href="#about" class="mobile-menu__link">About</a>
+      <a href="#credentials" class="mobile-menu__link">Signal</a>
+      <a href="#contact" class="mobile-menu__link">Contact</a>
+    </div>
+
+    <!-- Global Background -->
+    <canvas id="heroCanvas" class="global-canvas"></canvas>
+    <div class="global-noise"></div>
+
+    <!-- Main Content -->
+    <main id="mainContent">
+      <!-- HERO -->
+      <section class="hero" id="hero">
+        <div class="container hero__container">
+          <div class="hero__content">
+            <p class="hero__label font-mono">
+              <span class="reveal-wrap"><span class="reveal-inner">AMAN JHA &nbsp;·&nbsp; SOFTWARE ENGINEER &nbsp;·&nbsp; MUMBAI</span></span>
+            </p>
+            <h1 class="hero__heading">
+              <span class="hero__line"><span class="reveal-wrap"><span class="reveal-inner">BUILDING SYSTEMS.</span></span></span>
+              <span class="hero__line"><span class="reveal-wrap"><span class="reveal-inner">SCALING LOGIC.</span></span></span>
+            </h1>
+            <p class="hero__sub font-mono">
+              <span class="hero__sub-line">&gt; Full-stack engineer &amp; founder, Avenra.</span>
+              <span class="hero__sub-line">&nbsp;&nbsp;Designing systems that handle real load.</span>
+            </p>
+            <div class="hero__cta">
+              <a href="#work" class="btn btn--primary font-mono" data-magnetic>
+                <span>VIEW MY WORK</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+              </a>
+              <a href="https://avenra-flow.vercel.app" target="_blank" rel="noopener" class="btn btn--secondary font-mono" data-magnetic>
+                <span>AVENRA FLOW</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="hero__scroll-indicator">
+            <div class="hero__scroll-line"></div>
+            <span class="font-mono">SCROLL</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORK / THE ARMORY -->
+      <section class="work" id="work">
+        <div class="container work__header">
+          <span class="section-label font-mono">// 01. WORK</span>
+          <h2 class="section-heading">The Armory.</h2>
+          <p class="section-sub font-mono">Three systems. Built to handle real problems.</p>
+        </div>
+        <div class="work__pinned" id="workPinned">
+          <div class="work__progress-track">
+            <div class="work__progress-bar" id="workProgress"></div>
+          </div>
+          <div class="work__track" id="workTrack">
+            <!-- Card 1: Avenra Flow -->
+            <article class="project-card project-card--flagship" data-accent="cyan" data-cursor-text="VIEW">
+              <div class="project-card__visual">
+                <div class="project-card__mockup project-card__mockup--avenra">
+                  <div class="mockup-dashboard">
+                    <div class="mockup-dashboard__header">
+                      <div class="mockup-dot mockup-dot--red"></div>
+                      <div class="mockup-dot mockup-dot--yellow"></div>
+                      <div class="mockup-dot mockup-dot--green"></div>
+                      <span class="font-mono" style="color:var(--color-text-muted);font-size:10px;margin-left:12px;">avenra-flow/dashboard</span>
+                    </div>
+                    <div class="mockup-dashboard__body">
+                      <div class="mockup-sidebar">
+                        <div class="mockup-sidebar__item active"></div>
+                        <div class="mockup-sidebar__item"></div>
+                        <div class="mockup-sidebar__item"></div>
+                        <div class="mockup-sidebar__item"></div>
+                      </div>
+                      <div class="mockup-main">
+                        <div class="mockup-stat-row">
+                          <div class="mockup-stat"><span class="mockup-stat__val">2,847</span><span class="mockup-stat__label font-mono">Invoices</span></div>
+                          <div class="mockup-stat"><span class="mockup-stat__val">₹14.2L</span><span class="mockup-stat__label font-mono">Processed</span></div>
+                          <div class="mockup-stat"><span class="mockup-stat__val">99.2%</span><span class="mockup-stat__label font-mono">Accuracy</span></div>
+                        </div>
+                        <div class="mockup-table">
+                          <div class="mockup-table__row mockup-table__row--header"><span>Invoice</span><span>Amount</span><span>Status</span></div>
+                          <div class="mockup-table__row"><span>INV-2847</span><span>₹1,24,500</span><span class="status-pill status-pill--success">Extracted</span></div>
+                          <div class="mockup-table__row"><span>INV-2846</span><span>₹89,200</span><span class="status-pill status-pill--success">Extracted</span></div>
+                          <div class="mockup-table__row"><span>INV-2845</span><span>₹2,10,000</span><span class="status-pill status-pill--pending">Processing</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-card__info">
+                <div class="project-card__top-row">
+                  <h3 class="project-card__title">AVENRA FLOW</h3>
+                  <div class="project-card__links">
+                    <a href="https://avenra-flow.vercel.app" target="_blank" rel="noopener" class="project-card__link font-mono">LIVE <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+                    <a href="https://github.com/infinix10552-ship-it/avenra-flow" target="_blank" rel="noopener" class="project-card__link font-mono">GITHUB <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+                  </div>
+                </div>
+                <p class="project-card__desc">Automated invoice & expense extraction platform built on a microservices architecture.</p>
+                <p class="project-card__quote font-mono">"Eliminates manual data-entry for finance workflows at scale. Zero human touchpoints in the extraction loop."</p>
+                <div class="project-card__tags">
+                  <span class="tag font-mono">Spring Boot</span>
+                  <span class="tag font-mono">React.js</span>
+                  <span class="tag font-mono">Python</span>
+                  <span class="tag font-mono">Microservices</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2: Vision Parse -->
+            <article class="project-card" data-accent="green" data-cursor-text="VIEW">
+              <div class="project-card__visual">
+                <div class="project-card__mockup project-card__mockup--vision">
+                  <div class="mockup-split">
+                    <div class="mockup-split__left">
+                      <div class="mockup-doc">
+                        <div class="mockup-doc__line w80"></div>
+                        <div class="mockup-doc__line w60"></div>
+                        <div class="mockup-doc__line w90"></div>
+                        <div class="mockup-doc__line w40"></div>
+                        <div class="mockup-doc__line w70"></div>
+                        <div class="mockup-doc__line w50"></div>
+                        <div class="mockup-doc__line w85"></div>
+                      </div>
+                    </div>
+                    <div class="mockup-split__divider"></div>
+                    <div class="mockup-split__right">
+                      <pre class="mockup-json font-mono"><span class="json-brace">{</span>
+  <span class="json-key">"vendor"</span>: <span class="json-string">"Acme Corp"</span>,
+  <span class="json-key">"total"</span>: <span class="json-number">24500.00</span>,
+  <span class="json-key">"date"</span>: <span class="json-string">"2025-03-15"</span>,
+  <span class="json-key">"items"</span>: [
+    { <span class="json-key">"desc"</span>: <span class="json-string">"Widget A"</span> }
+  ]
+<span class="json-brace">}</span></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-card__info">
+                <div class="project-card__top-row">
+                  <h3 class="project-card__title">VISION PARSE</h3>
+                  <div class="project-card__links">
+                    <a href="https://vision-parse.vercel.app" target="_blank" rel="noopener" class="project-card__link font-mono">LIVE <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+                    <a href="https://github.com/infinix10552-ship-it/vision-parse" target="_blank" rel="noopener" class="project-card__link font-mono">GITHUB <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+                  </div>
+                </div>
+                <p class="project-card__desc">AI document parsing engine. Transforms unstructured visual inputs into structured, queryable data — zero manual mapping.</p>
+                <p class="project-card__quote font-mono">"From raw document chaos to clean JSON in a single inference pass."</p>
+                <div class="project-card__tags">
+                  <span class="tag font-mono">Python</span>
+                  <span class="tag font-mono">Computer Vision</span>
+                  <span class="tag font-mono">OCR</span>
+                  <span class="tag font-mono">REST API</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3: Complaint Management -->
+            <article class="project-card" data-accent="amber" data-cursor-text="VIEW">
+              <div class="project-card__visual">
+                <div class="project-card__mockup project-card__mockup--complaint">
+                  <div class="mockup-dashboard">
+                    <div class="mockup-dashboard__header">
+                      <div class="mockup-dot mockup-dot--red"></div>
+                      <div class="mockup-dot mockup-dot--yellow"></div>
+                      <div class="mockup-dot mockup-dot--green"></div>
+                      <span class="font-mono" style="color:var(--color-text-muted);font-size:10px;margin-left:12px;">complaint-system/tickets</span>
+                    </div>
+                    <div class="mockup-dashboard__body" style="flex-direction:column;padding:16px;">
+                      <div class="mockup-ticket-row">
+                        <span class="font-mono" style="color:var(--color-text-secondary);font-size:11px;">#TKT-0091</span>
+                        <span class="font-mono" style="font-size:11px;">Billing Discrepancy</span>
+                        <span class="status-pill status-pill--success font-mono">Resolved</span>
+                      </div>
+                      <div class="mockup-ticket-row">
+                        <span class="font-mono" style="color:var(--color-text-secondary);font-size:11px;">#TKT-0092</span>
+                        <span class="font-mono" style="font-size:11px;">Service Outage Report</span>
+                        <span class="status-pill status-pill--pending font-mono">Pending</span>
+                      </div>
+                      <div class="mockup-ticket-row">
+                        <span class="font-mono" style="color:var(--color-text-secondary);font-size:11px;">#TKT-0093</span>
+                        <span class="font-mono" style="font-size:11px;">Access Request</span>
+                        <span class="status-pill status-pill--open font-mono">Open</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-card__info">
+                <div class="project-card__top-row">
+                  <h3 class="project-card__title">COMPLAINT MGMT SYSTEM</h3>
+                  <div class="project-card__links">
+                    <a href="https://complaint-management-system-ashen.vercel.app" target="_blank" rel="noopener" class="project-card__link font-mono">LIVE <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+                    <a href="https://github.com/infinix10552-ship-it/complaint-management-system" target="_blank" rel="noopener" class="project-card__link font-mono">GH <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+                  </div>
+                </div>
+                <p class="project-card__desc">End-to-end complaint lifecycle management platform. Deployed on Vercel + Render.</p>
+                <p class="project-card__quote font-mono">"Full lifecycle: submission → assignment → resolution. Accessible from any device."</p>
+                <div class="project-card__tags">
+                  <span class="tag font-mono">Spring Boot</span>
+                  <span class="tag font-mono">React.js</span>
+                  <span class="tag font-mono">Ticketing</span>
+                  <span class="tag font-mono">Render</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT / THE SIGNAL -->
+      <section class="about" id="about">
+        <div class="container about__grid">
+          <div class="about__left">
+            <span class="section-label font-mono">// 02. ABOUT</span>
+            <h2 class="section-heading">The Signal.</h2>
+            <div class="about__json-block">
+              <pre class="about__json font-mono"><span class="json-brace">{</span>
+  <span class="json-key">"name"</span>: <span class="json-string">"Aman Jha"</span>,
+  <span class="json-key">"age"</span>: <span class="json-number">20</span>,
+  <span class="json-key">"location"</span>: <span class="json-string">"Mumbai, Maharashtra, IN"</span>,
+  <span class="json-key">"role"</span>: <span class="json-string">"Software Engineer · Founder"</span>,
+  <span class="json-key">"education"</span>: <span class="json-brace">{</span>
+    <span class="json-key">"degree"</span>: <span class="json-string">"B.E. Electronics & Telecomm"</span>,
+    <span class="json-key">"institution"</span>: <span class="json-string">"TCET Mumbai"</span>,
+    <span class="json-key">"honors"</span>: <span class="json-string">"B.TECH AI/ML"</span>,
+    <span class="json-key">"semester"</span>: <span class="json-number">4</span>
+  <span class="json-brace">}</span>,
+  <span class="json-key">"company"</span>: <span class="json-string">"Avenra"</span>,
+  <span class="json-key">"flagship_product"</span>: <span class="json-string">"Avenra Flow"</span>,
+  <span class="json-key">"stack"</span>: [<span class="json-string">"Java"</span>, <span class="json-string">"Spring Boot"</span>, <span class="json-string">"React.js"</span>, <span class="json-string">"Microservices"</span>],
+  <span class="json-key">"philosophy"</span>: <span class="json-string">"Technical depth over surface-level execution."</span>
+<span class="json-brace">}</span></pre>
+            </div>
+            <div class="about__philosophy" id="aboutPhilosophy">
+              <p class="about__philosophy-line">I don't build features. I build systems.</p>
+              <p class="about__philosophy-line">Every project I ship is architected for real load, real users, and real edge cases — not portfolio demos.</p>
+              <p class="about__philosophy-line">Avenra Flow isn't a side project; it's infrastructure.</p>
+              <p class="about__philosophy-line">From Mumbai. Building globally.</p>
+            </div>
+          </div>
+          <div class="about__right">
+            <div class="about__terminal">
+              <div class="terminal-chrome">
+                <div class="mockup-dot mockup-dot--red"></div>
+                <div class="mockup-dot mockup-dot--yellow"></div>
+                <div class="mockup-dot mockup-dot--green"></div>
+                <span class="font-mono" style="color:var(--color-text-muted);font-size:10px;margin-left:12px;">aman.terminal</span>
+              </div>
+              <div class="terminal-body font-mono" id="terminalBody">
+                <div class="terminal-line" data-delay="0"><span class="terminal-prompt">&gt;</span> aman --status</div>
+                <div class="terminal-line terminal-response" data-delay="400"><span class="terminal-dot-green">●</span> Active</div>
+                <div class="terminal-line" data-delay="900"><span class="terminal-prompt">&gt;</span> aman --building</div>
+                <div class="terminal-line terminal-response" data-delay="1300">Avenra Flow &nbsp;···&nbsp; Invoice Extraction Engine</div>
+                <div class="terminal-line" data-delay="1800"><span class="terminal-prompt">&gt;</span> aman --next</div>
+                <div class="terminal-line terminal-response" data-delay="2200">Avenra IntelliZence &nbsp;·&nbsp; Anomaly & Fraud Detection</div>
+                <div class="terminal-line" data-delay="2700"><span class="terminal-prompt">&gt;</span> <span class="terminal-cursor">_</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CREDENTIALS / THE SIGNAL LINE -->
+      <section class="credentials" id="credentials">
+        <div class="credentials__ticker">
+          <div class="credentials__ticker-track">
+            <span class="credentials__ticker-text font-mono">TCET MUMBAI &nbsp;·&nbsp; B.E. EXTC &nbsp;·&nbsp; AI/ML HONORS &nbsp;·&nbsp; IEEE WORKING COMMITTEE &nbsp;·&nbsp; AVENRA &nbsp;·&nbsp; AMAN JHA DECODES &nbsp;·&nbsp; SPRING BOOT &nbsp;·&nbsp; REACT.JS &nbsp;·&nbsp;</span>
+            <span class="credentials__ticker-text font-mono">TCET MUMBAI &nbsp;·&nbsp; B.E. EXTC &nbsp;·&nbsp; AI/ML HONORS &nbsp;·&nbsp; IEEE WORKING COMMITTEE &nbsp;·&nbsp; AVENRA &nbsp;·&nbsp; AMAN JHA DECODES &nbsp;·&nbsp; SPRING BOOT &nbsp;·&nbsp; REACT.JS &nbsp;·&nbsp;</span>
+          </div>
+        </div>
+        <div class="container credentials__stats">
+          <div class="stat" data-count="3">
+            <span class="stat__number">0</span>
+            <span class="stat__label font-mono">Systems Shipped</span>
+            <span class="stat__desc font-mono">Production-grade projects deployed</span>
+          </div>
+          <div class="stat" data-count="1">
+            <span class="stat__number">0</span>
+            <span class="stat__label font-mono">Company Founded</span>
+            <span class="stat__desc font-mono">Avenra — Invoice & Expense Automation</span>
+          </div>
+          <div class="stat" data-count="2">
+            <span class="stat__number">0</span>
+            <span class="stat__label font-mono">Content Channels</span>
+            <span class="stat__desc font-mono">YouTube + Instagram via Aman Jha Decodes</span>
+          </div>
+          <div class="stat" data-count="1">
+            <span class="stat__number">0</span>
+            <span class="stat__label font-mono">AVENRA</span>
+            <span class="stat__desc font-mono">Scale to the Sphere</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT / THE TERMINAL -->
+      <section class="contact" id="contact">
+        <div class="container contact__container">
+          <span class="section-label font-mono">// 03. CONTACT</span>
+          <h2 class="section-heading contact__heading">Let's build something<br>that doesn't break.</h2>
+          <div class="contact__terminal">
+            <div class="terminal-chrome">
+              <div class="mockup-dot mockup-dot--red"></div>
+              <div class="mockup-dot mockup-dot--yellow"></div>
+              <div class="mockup-dot mockup-dot--green"></div>
+              <span class="font-mono" style="color:var(--color-text-muted);font-size:10px;margin-left:12px;">aman.jha/contact</span>
+            </div>
+            <div class="terminal-body font-mono">
+              <p class="terminal-line"><span class="terminal-prompt">&gt;</span> Welcome. State your intent.</p>
+              <form id="contactForm" class="contact__form">
+                <div class="contact__field">
+                  <label class="terminal-prompt">~/contact &gt; send --from</label>
+                  <input type="email" id="contactEmail" placeholder="your@email.com" required autocomplete="email">
+                </div>
+                <div class="contact__field">
+                  <label class="terminal-prompt">~/contact &gt; --subject</label>
+                  <input type="text" id="contactSubject" placeholder="Your subject" required>
+                </div>
+                <div class="contact__field">
+                  <label class="terminal-prompt">~/contact &gt; --message</label>
+                  <textarea id="contactMessage" placeholder="Your message" rows="3" required></textarea>
+                </div>
+                <div class="contact__field">
+                  <label class="terminal-prompt">~/contact &gt; run</label>
+                  <button type="submit" class="btn btn--primary font-mono contact__submit">
+                    <span>EXECUTE ↵</span>
+                  </button>
+                </div>
+              </form>
+              <div class="contact__success" id="contactSuccess" style="display:none;">
+                <p class="terminal-line"><span class="terminal-prompt">&gt;</span> <span class="contact__success-text"></span></p>
+              </div>
+            </div>
+          </div>
+          <div class="contact__socials">
+            <a href="https://github.com/infinix10552-ship-it" target="_blank" rel="noopener" class="contact__social font-mono" data-magnetic>GITHUB <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+            <a href="https://linkedin.com/in/aman-jha-0091b2285" target="_blank" rel="noopener" class="contact__social font-mono" data-magnetic>LINKEDIN <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+            <a href="https://youtube.com/@amanjhadecodes" target="_blank" rel="noopener" class="contact__social font-mono" data-magnetic>YOUTUBE <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+            <a href="https://instagram.com/amanjhadecodes" target="_blank" rel="noopener" class="contact__social font-mono" data-magnetic>INSTAGRAM <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <span class="footer__monogram">AJ</span>
+        <span class="footer__info font-mono">Aman Jha &nbsp;·&nbsp; Mumbai, IN &nbsp;·&nbsp; Built with precision.</span>
+        <span class="footer__copy font-mono">© 2025</span>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
