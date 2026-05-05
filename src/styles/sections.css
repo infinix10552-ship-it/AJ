@@ -25,13 +25,14 @@
 .credentials { padding:120px 0; overflow:hidden; }
 .credentials__ticker { padding:24px 0; border-top:1px solid var(--color-border); border-bottom:1px solid var(--color-border); margin-bottom:80px; overflow:hidden; }
 .credentials__ticker-track { display:flex; width:max-content; animation:tickerScroll 25s linear infinite; }
-.credentials__ticker-text { font-size:var(--text-label); letter-spacing:var(--tracking-label); color:var(--color-text-muted); text-transform:uppercase; white-space:nowrap; padding-right:24px; }
+.credentials__ticker-text { font-size: 14px; letter-spacing: 0.15em; color: var(--color-text-secondary); text-transform:uppercase; white-space:nowrap; padding-right:48px; }
 @keyframes tickerScroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 .credentials__stats { gap:24px; }
-.stat { grid-column:span 3; text-align:center; padding:40px 20px; border:1px solid var(--color-border); border-radius:10px; background:var(--color-surface); }
-.stat__number { display:block; font-family:var(--font-display); font-size:var(--text-h1); font-weight:var(--weight-display); color:var(--color-text-primary); line-height:1; margin-bottom:8px; }
-.stat__label { display:block; font-size:var(--text-label); text-transform:uppercase; letter-spacing:var(--tracking-label); color:var(--color-text-secondary); margin-bottom:6px; }
-.stat__desc { display:block; font-size:10px; color:var(--color-text-muted); }
+.stat { grid-column:span 3; text-align:center; padding:40px 20px; border:1px solid var(--color-border); border-radius:10px; background:var(--color-surface); transition: border-color 0.4s var(--ease-primary), box-shadow 0.4s var(--ease-primary), transform 0.4s var(--ease-primary); }
+.stat:hover { border-color: var(--color-accent-cyan); box-shadow: var(--glow-cyan); transform: translateY(-5px); }
+.stat__number { display:block; font-family:var(--font-display); font-size: clamp(48px, 6vw, 84px); font-weight:var(--weight-display); color:var(--color-accent-cyan); text-shadow: var(--glow-cyan); line-height:1; margin-bottom:8px; }
+.stat__label { display:block; font-size: 13px; text-transform:uppercase; letter-spacing: 0.15em; color: var(--color-text-primary); margin-bottom:10px; }
+.stat__desc { display:block; font-size: 11px; color: var(--color-text-secondary); }
 
 /* Contact Section */
 .contact { padding:160px 0 80px; }

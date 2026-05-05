@@ -9,7 +9,7 @@ img { max-width: 100%; display: block; }
 ::selection { background: rgba(0,229,255,0.2); color: var(--color-text-primary); }
 .container { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: clamp(16px, 2vw, 24px); max-width: 1440px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 80px); }
 .section-label { font-size: var(--text-label); text-transform: uppercase; letter-spacing: var(--tracking-label); color: var(--color-accent-cyan); grid-column: 1 / -1; margin-bottom: 16px; }
-.section-heading { font-family: var(--font-display); font-size: var(--text-h1); font-weight: var(--weight-display); letter-spacing: var(--tracking-display); grid-column: 1 / -1; margin-bottom: 12px; line-height: 1.1; }
+.section-heading { font-family: var(--font-display); font-size: clamp(48px, 6vw, 84px); font-weight: var(--weight-display); letter-spacing: var(--tracking-display); grid-column: 1 / -1; margin-bottom: 12px; line-height: 1.1; }
 .section-sub { font-size: var(--text-mono); color: var(--color-text-secondary); grid-column: 1 / -1; }
 .reveal-wrap { overflow: hidden; display: inline-block; }
 .reveal-inner { display: inline-block; transform: translateY(110%); }
