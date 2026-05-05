@@ -65,7 +65,7 @@ export function initWorkSection() {
   });
 
   // Stagger card reveals
-  gsap.utils.toArray('.project-card').forEach((card: any, i: number) => {
+  gsap.utils.toArray('.project-card').forEach((card: any) => {
     gsap.from(card, {
       opacity: 0,
       x: 100,
