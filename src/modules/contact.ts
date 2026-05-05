@@ -46,7 +46,7 @@ export function initContact() {
 
     try {
       // NOTE: Replace 'mqakvjnd' with your own Formspree ID from https://formspree.io/
-      const response = await fetch('https://formspree.io/f/mqakvjnd', {
+      const response = await fetch('https://formspree.io/f/mnjwdlnj', {
         method: 'POST',
         body: formData,
         headers: {
