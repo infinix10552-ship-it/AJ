@@ -27,45 +27,72 @@ export function initContact() {
 
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = form.querySelector('.contact__submit') as HTMLButtonElement;
     const btnText = btn.querySelector('span');
     if (!btnText) return;
 
-    // ASCII spinner
+    // Start loading state
+    btn.disabled = true;
     const frames = ['/', '—', '\\', '|'];
     let frame = 0;
-    btnText.textContent = frames[0];
     const spinner = setInterval(() => {
       frame = (frame + 1) % frames.length;
       btnText.textContent = frames[frame];
-    }, 120);
+    }, 100);
 
-    // Simulate processing
-    setTimeout(() => {
+    const formData = new FormData(form);
+
+    try {
+      // NOTE: Replace 'mqakvjnd' with your own Formspree ID from https://formspree.io/
+      const response = await fetch('https://formspree.io/f/mqakvjnd', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
       clearInterval(spinner);
-      form.style.display = 'none';
-      successEl.style.display = 'block';
 
-      const messages = [
-        '> Packet delivered.',
-        '> Status: 200 OK',
-        '> Expect a response within 24h.'
-      ];
+      if (response.ok) {
+        form.style.display = 'none';
+        successEl.style.display = 'block';
+        
+        // Ensure visibility of the success terminal line
+        const lines = successEl.querySelectorAll('.terminal-line');
+        lines.forEach(line => line.classList.add('visible'));
 
-      const textEl = successEl.querySelector('.contact__success-text') as HTMLElement;
-      let msgIndex = 0;
+        const messages = [
+          '> Establishing secure tunnel...',
+          '> Payload encrypted.',
+          '> Status: 200 OK',
+          '> Message transmitted successfully.',
+          '> Expect a response within 24h.'
+        ];
 
-      function typeNext() {
-        if (msgIndex >= messages.length) return;
-        const msg = messages[msgIndex];
-        textEl.innerHTML += (msgIndex > 0 ? '<br>' : '') + msg;
-        msgIndex++;
-        setTimeout(typeNext, 400);
+        const textEl = successEl.querySelector('.contact__success-text') as HTMLElement;
+        let msgIndex = 0;
+        textEl.innerHTML = '';
+
+        function typeNext() {
+          if (msgIndex >= messages.length) return;
+          const msg = messages[msgIndex];
+          textEl.innerHTML += (msgIndex > 0 ? '<br>' : '') + msg;
+          msgIndex++;
+          setTimeout(typeNext, 400);
+        }
+
+        typeNext();
+      } else {
+        throw new Error('Transmission failed');
       }
-
-      typeNext();
-    }, 1200);
+    } catch (err) {
+      clearInterval(spinner);
+      btn.disabled = false;
+      btnText.textContent = 'RETRY ↵';
+      alert('Terminal Error: Connection refused. Please try again.');
+    }
   });
 }
